@@ -523,6 +523,7 @@
 	name = "candy corn"
 	desc = "It's a handful of candy corn. Can be stored in a detective's hat."
 	icon_state = "candy_corn"
+	food_flags = FOOD_SWEET
 
 /obj/item/weapon/reagent_containers/food/snacks/candy_corn/New()
 	..()
@@ -535,6 +536,7 @@
 	desc = "It's a classic striped candy cane."
 	icon = 'icons/obj/food_seasonal.dmi'
 	icon_state = "candycane"
+	food_flags = FOOD_SWEET
 
 /obj/item/weapon/reagent_containers/food/snacks/candy_cane/New()
 	..()
@@ -546,6 +548,7 @@
 	name = "cookie"
 	desc = "COOKIE!!!"
 	icon_state = "COOKIE!!!"
+	food_flags = FOOD_SWEET
 
 /obj/item/weapon/reagent_containers/food/snacks/cookie/New()
 	..()
@@ -557,6 +560,7 @@
 	desc = "A holiday treat made with sugar and love."
 	icon = 'icons/obj/food_seasonal.dmi'
 	icon_state = "gingerbread"
+	food_flags = FOOD_SWEET
 
 /obj/item/weapon/reagent_containers/food/snacks/gingerbread_man/New()
 	..()
@@ -720,7 +724,7 @@
 	name = "jelly donut"
 	desc = "You jelly?"
 	icon_state = "jdonut1"
-	bitesize = 5
+	bitesize = 5	
 /obj/item/weapon/reagent_containers/food/snacks/donut/slimejelly/New()
 	..()
 	reagents.add_reagent(NUTRIMENT, 3)
@@ -1070,7 +1074,6 @@
 	name = "veggie burger"
 	desc = "Technically vegetarian."
 	icon_state = "veggieburger"
-	food_flags = FOOD_MEAT
 
 /obj/item/weapon/reagent_containers/food/snacks/veggieburger/New()
 	..()
@@ -1289,7 +1292,7 @@
 	desc = "Mmm, waffles"
 	icon_state = "waffles"
 	trash = /obj/item/trash/waffles
-	food_flags = FOOD_ANIMAL
+	food_flags = FOOD_ANIMAL | FOOD_SWEET //contains eggs, syrup is sweet
 /obj/item/weapon/reagent_containers/food/snacks/waffles/New()
 	..()
 	reagents.add_reagent(NUTRIMENT, 8)
@@ -1312,6 +1315,8 @@
 	desc = "Not made of people. Honest." //Totally people.
 	icon_state = "soylent_green"
 	trash = /obj/item/trash/waffles
+	food_flags = FOOD_MEAT
+	
 /obj/item/weapon/reagent_containers/food/snacks/soylentgreen/New()
 	..()
 	reagents.add_reagent(NUTRIMENT, 10)
@@ -1568,6 +1573,7 @@
 	name = "space twinkie"
 	icon_state = "space_twinkie"
 	desc = "Guaranteed to survive longer than you will."
+	food_flags = FOOD_SWEET
 
 /obj/item/weapon/reagent_containers/food/snacks/spacetwinkie/New()
 	..()
@@ -1591,6 +1597,7 @@
 	icon_state = "syndi_cakes"
 	desc = "An extremely moist snack cake that tastes just as good after being nuked."
 	trash = /obj/item/trash/syndi_cakes
+	food_flags = FOOD_SWEET
 
 /obj/item/weapon/reagent_containers/food/snacks/syndicake/New()
 	..()
@@ -1782,6 +1789,7 @@
 	name = "Fortune cookie"
 	desc = "A true prophecy in each cookie!"
 	icon_state = "fortune_cookie"
+	food_flags = FOOD_SWEET | FOOD_ANIMAL //contains eggs
 
 /obj/item/weapon/reagent_containers/food/snacks/fortunecookie/New()
 	..()
@@ -1879,7 +1887,7 @@
 	name = "slime soup"
 	desc = "If no water is available, you may substitute tears."
 	icon_state = "slimesoup"
-	food_flags = FOOD_LIQUID
+	food_flags = FOOD_LIQUID | FOOD_ANIMAL //Slimes are animals, sort of.
 
 /obj/item/weapon/reagent_containers/food/snacks/slimesoup/New()
 	..()
@@ -1891,7 +1899,7 @@
 	name = "Tomato soup"
 	desc = "Smells like copper"
 	icon_state = "tomatosoup"
-	food_flags = FOOD_LIQUID
+	food_flags = FOOD_LIQUID | FOOD_MEAT //I'm going to call blood a meat product
 
 /obj/item/weapon/reagent_containers/food/snacks/bloodsoup/New()
 	..()
@@ -1931,7 +1939,7 @@
 	desc = "To think, the botanist would've beat you to death with one of these."
 	icon_state = "nettlesoup"
 	trash = /obj/item/trash/snack_bowl
-	food_flags = FOOD_LIQUID
+	food_flags = FOOD_LIQUID | FOOD_ANIMAL //contains eggs
 
 /obj/item/weapon/reagent_containers/food/snacks/nettlesoup/New()
 	..()
@@ -1994,7 +2002,7 @@
 	desc = "Uma delicia."
 	icon_state = "monkeysoup"
 	trash = /obj/item/trash/monkey_bowl
-	food_flags = FOOD_LIQUID
+	food_flags = FOOD_LIQUID | FOOD_MEAT
 
 /obj/item/weapon/reagent_containers/food/snacks/monkeysoup/New()
 	..()
@@ -2023,7 +2031,7 @@
 	desc = "May be served either hot or cold."
 	icon_state = "avocadosoup"
 	trash = /obj/item/trash/snack_bowl
-	food_flags = FOOD_LIQUID
+	food_flags = FOOD_LIQUID | FOOD_ANIMAL | FOOD_LACTOSE //cream
 
 /obj/item/weapon/reagent_containers/food/snacks/avocadosoup/New()
 	..()
@@ -2204,7 +2212,7 @@
 	desc = "Goes great with Tomato soup!"
 	icon_state = "toastedsandwich"
 	trash = /obj/item/trash/plate
-	food_flags = FOOD_MEAT | FOOD_LACTOSE | FOOD_ANIMAL
+	food_flags = FOOD_LACTOSE | FOOD_ANIMAL
 
 /obj/item/weapon/reagent_containers/food/snacks/grilledcheese/New()
 	..()
@@ -2229,7 +2237,7 @@
 	desc = "Waffles from Roffle. Co."
 	icon_state = "rofflewaffles"
 	trash = /obj/item/trash/waffles
-	food_flags = FOOD_ANIMAL //eggs
+	food_flags = FOOD_ANIMAL | FOOD_SWEET //eggs
 
 /obj/item/weapon/reagent_containers/food/snacks/rofflewaffles/New()
 	..()
@@ -2271,6 +2279,7 @@
 	reagents.add_reagent(CHERRYJELLY, 5)
 
 /obj/item/weapon/reagent_containers/food/snacks/jelliedtoast/slime
+	food_flags = FOOD_SWEET | FOOD_ANIMAL //slime
 
 /obj/item/weapon/reagent_containers/food/snacks/jelliedtoast/slime/New()
 	..()
@@ -2298,6 +2307,7 @@
 	bitesize = 2
 
 /obj/item/weapon/reagent_containers/food/snacks/jellyburger/slime
+	food_flags = FOOD_ANIMAL //slime
 
 /obj/item/weapon/reagent_containers/food/snacks/jellyburger/slime/New()
 	..()
@@ -2461,6 +2471,7 @@
 	name = "Spesslaw"
 	desc = "A lawyers favourite"
 	icon_state = "spesslaw"
+	food_flags = FOOD_MEAT //contains meatballs
 
 /obj/item/weapon/reagent_containers/food/snacks/spesslaw/New()
 	..()
@@ -2472,6 +2483,7 @@
 	desc = "A large, soft, all-twisted-up pretzel full of POP!"
 	icon_state = "poppypretzel"
 	bitesize = 2
+	food_flags = FOOD_ANIMAL //eggs
 
 /obj/item/weapon/reagent_containers/food/snacks/poppypretzel/New()
 	..()
@@ -2839,7 +2851,7 @@
 	slice_path = /obj/item/weapon/reagent_containers/food/snacks/tofubreadslice
 	slices_num = 5
 	storage_slots = 3
-	food_flags = FOOD_MEAT | FOOD_ANIMAL | FOOD_LACTOSE
+	food_flags = FOOD_ANIMAL | FOOD_LACTOSE
 	w_class = W_CLASS_MEDIUM
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/tofubread/New()
@@ -3628,7 +3640,7 @@
 	name = "eggs benedict"
 	desc = "There is only one egg on this, how rude."
 	icon_state = "benedict"
-	food_flags = FOOD_ANIMAL
+	food_flags = FOOD_ANIMAL | FOOD_MEAT
 
 /obj/item/weapon/reagent_containers/food/snacks/benedict/New()
 	..()
@@ -4550,7 +4562,7 @@
 	desc = "Sweet and spicy!"
 	icon_state = "cinnamon_roll"
 	trash = /obj/item/trash/plate
-	food_flags = FOOD_SWEET | FOOD_ANIMAL | FOOD_LACTOSE
+	food_flags = FOOD_SWEET | FOOD_ANIMAL | FOOD_LACTOSE //eggs and milk
 
 /obj/item/weapon/reagent_containers/food/snacks/cinnamonroll/New()
 	..()
@@ -4563,7 +4575,7 @@
 	desc = "Guarranted snail-free!"
 	icon_state = "cinnamon_pie"
 	trash = /obj/item/trash/pietin
-	food_flags = FOOD_SWEET | FOOD_ANIMAL | FOOD_LACTOSE
+	food_flags = FOOD_SWEET | FOOD_ANIMAL | FOOD_LACTOSE //eggs and milk
 
 /obj/item/weapon/reagent_containers/food/snacks/cinnamonpie/New()
 	..()
@@ -4847,6 +4859,7 @@
 	food_flags = FOOD_SWEET
 	icon_state = "chococoin_unwrapped"
 	bitesize = 4
+	foot_flags = FOOD_SWEET
 
 /obj/item/trash/lollipopstick
 	name = "lollipop stick"
@@ -4904,6 +4917,7 @@
 	desc = "Plus doux que ses lèvres."
 	icon_state = "eclair"
 	bitesize = 5
+	food_flags = FOOD_ANIMAL | FOOD_LACTOSE //contains cream
 
 /obj/item/weapon/reagent_containers/food/snacks/eclair/New()
 	..()
@@ -5018,6 +5032,7 @@
 	desc = "Everyday is Sunday when you orbit a sun."
 	icon_state = "voxroast"
 	bitesize = 3
+	food_flags = FOOD_MEAT
 
 /obj/item/weapon/reagent_containers/food/snacks/sundayroast/New()
 	..()
@@ -5121,6 +5136,7 @@
 	desc = "A thick, delicious legionnaire frog leg, its taste and texture resemble chicken."
 	icon_state = "frog_leg"
 	bitesize = 2
+	food_flags = FOOD_MEAT
 
 /obj/item/weapon/reagent_containers/food/snacks/frog_leg/New()
 	..()
@@ -5154,6 +5170,7 @@
 	desc = "A heavenly aroma surrounds this meat."
 	icon_state = "bacon"
 	bitesize = 2
+	food_flags = FOOD_MEAT
 
 /obj/item/weapon/reagent_containers/food/snacks/bacon/New()
 	..()
@@ -5164,6 +5181,7 @@
 	desc = "Delicious, gravy-covered meat that will melt-in-your-beak. Or mouth."
 	icon_state = "porktenderloin"
 	bitesize = 4
+	food_flags = FOOD_MEAT
 
 /obj/item/weapon/reagent_containers/food/snacks/porktenderloin/New()
 	..()
@@ -5185,6 +5203,7 @@
 	desc = "Makes your insides burn with flavor! With this in your stomach, you won't want to stop moving any time soon."
 	icon_state = "sweetsourpork"
 	bitesize = 2
+	food_flags = FOOD_MEAT
 
 /obj/item/weapon/reagent_containers/food/snacks/sweetandsourpork/New()
 	..()
@@ -5272,6 +5291,7 @@
 	icon_state = "fruitsalad"
 	bitesize = 2
 	trash = /obj/item/trash/snack_bowl
+	food_flags = FOOD_SWEET
 
 /obj/item/weapon/reagent_containers/food/snacks/fruitsalad/New()
 	..()
@@ -5347,6 +5367,7 @@
 	desc = "There may be more fish in the sea, but there's only one kind of fish in the stars."
 	icon_state = "fishtacosupreme"
 	bitesize = 3
+	food_flags = FOOD_MEAT
 
 /obj/item/weapon/reagent_containers/food/snacks/fishtacosupreme/New()
 	..()
@@ -5402,6 +5423,7 @@
 	desc = "The national dish of Tonga, a country that you had previously never heard about."
 	icon_state = "poissoncru"
 	bitesize = 2
+	food_flags = FOOD_MEAT
 
 /obj/item/weapon/reagent_containers/food/snacks/poissoncru/New()
 	..()
@@ -5412,6 +5434,7 @@
 	desc = "Evokes the question: do you ruin chicken by putting it in a salad, or improve a salad by adding chicken?"
 	icon_state = "chickensalad"
 	bitesize = 4
+	food_flags = FOOD_MEAT
 
 /obj/item/weapon/reagent_containers/food/snacks/chickensalad/New()
 	..()
@@ -5422,7 +5445,7 @@
 	desc = "Member Kingston? Member uncapped bombs? Member beardbeard? Member Goonleak? Member the vore raid? Member split departmental access? I member!"
 	icon_state = "grapesalad"
 	bitesize = 2
-	food_flags = FOOD_ANIMAL | FOOD_LACTOSE
+	food_flags = FOOD_ANIMAL | FOOD_LACTOSE //cheese
 
 /obj/item/weapon/reagent_containers/food/snacks/grapesalad/New()
 	..()
@@ -5477,6 +5500,7 @@
 	desc = "Made from real teeth!"
 	icon_state = "gelatin"
 	bitesize = 1
+	food_flags = FOOD_ANIMAL //teeth
 
 /obj/item/weapon/reagent_containers/food/snacks/gelatin/New()
 	..()
@@ -5574,6 +5598,7 @@
 	name = "maple leaf"
 	desc = "A large maple leaf."
 	icon_state = "mapleleaf"
+	food_flags = FOOD_SWEET
 
 /obj/item/weapon/reagent_containers/food/snacks/mapleleaf/New()
 	..()
@@ -5585,7 +5610,7 @@
 	desc = "French fries lathered with Canadian maple syrup and cheese curds. Delightful, eh?"
 	icon_state = "poutinesyrup"
 	trash = /obj/item/trash/plate
-	food_flags = FOOD_ANIMAL | FOOD_LACTOSE //cheese
+	food_flags = FOOD_ANIMAL | FOOD_LACTOSE | FOOD_SWEET //cheese
 
 /obj/item/weapon/reagent_containers/food/snacks/poutinesyrup/New()
 	..()
@@ -5645,7 +5670,7 @@
 	bitesize = 3
 	storage_slots = 1
 	w_class = W_CLASS_MEDIUM
-	food_flags = FOOD_ANIMAL | FOOD_LACTOSE //cheese
+	food_flags = FOOD_ANIMAL | FOOD_LACTOSE | FOOD_MEAT //cheese
 
 /obj/item/weapon/reagent_containers/food/snacks/lasagna/New()
 	..()
@@ -5827,7 +5852,7 @@ var/global/list/bomb_like_items = list(/obj/item/device/transfer_valve, /obj/ite
 	desc = "A simple sushi consisting of egg and rice."
 	icon = 'icons/obj/seafood.dmi'
 	icon_state = "sushi_Tamago"
-	food_flags = FOOD_MEAT
+	food_flags = FOOD_MEAT | FOOD_ANIMAL //egg
 
 /obj/item/weapon/reagent_containers/food/snacks/multispawner/sushi_Inari
 	child_type = /obj/item/weapon/reagent_containers/food/snacks/sushi/sushi_Inari
@@ -5877,7 +5902,7 @@ var/global/list/bomb_like_items = list(/obj/item/device/transfer_valve, /obj/ite
 	desc = "A sushi consisting of shark roe and an egg."
 	icon = 'icons/obj/seafood.dmi'
 	icon_state = "sushi_TobikoEgg"
-	food_flags = FOOD_MEAT
+	food_flags = FOOD_MEAT | FOOD_ANIMAL
 
 /obj/item/weapon/reagent_containers/food/snacks/sushi_TobikoEgg/New()
 	..()
@@ -5925,6 +5950,7 @@ var/global/list/bomb_like_items = list(/obj/item/device/transfer_valve, /obj/ite
 	desc = "A simple sushi consisting of avocado and rice."
 	icon = 'icons/obj/seafood.dmi'
 	icon_state = "sushi_avocado"
+	food_flags = FOOD_MEAT
 
 ////	END SUSHI	////
 
@@ -6222,7 +6248,7 @@ obj/item/weapon/reagent_containers/food/snacks/butterfingers_l
 	name = "bulgogi"
 	desc = "Thin grilled beef marinated with grated pear juice."
 	icon_state = "bulgogi"
-	food_flags = FOOD_SWEET | FOOD_ANIMAL
+	food_flags = FOOD_SWEET | FOOD_MEAT
 
 /obj/item/weapon/reagent_containers/food/snacks/bulgogi/New()
 	..()
@@ -6233,6 +6259,7 @@ obj/item/weapon/reagent_containers/food/snacks/butterfingers_l
 	name = "candied pear"
 	desc = "A pear covered with caramel. Quite sugary."
 	icon_state = "candiedpear"
+	food_flags = FOOD_SWEET
 
 /obj/item/weapon/reagent_containers/food/snacks/candiedpear/New()
 	..()
@@ -6243,6 +6270,7 @@ obj/item/weapon/reagent_containers/food/snacks/butterfingers_l
 	name = "baked pears"
 	desc = "Baked pears cooked with cinnamon, sugar and some cream."
 	icon_state = "bakedpears"
+	food_flags = FOOD_SWEET | FOOD_ANIMAL | FOOD_LACTOSE //cream
 
 /obj/item/weapon/reagent_containers/food/snacks/bakedpears/New()
 	..()
@@ -6316,6 +6344,7 @@ obj/item/weapon/reagent_containers/food/snacks/butterfingers_l
 	desc = "The choice of choosy moms."
 	icon = 'icons/obj/food2.dmi'
 	icon_state = "grapejelly"
+	food_flags = FOOD_SWEET
 
 /obj/item/weapon/reagent_containers/food/snacks/grapejelly/New()
 	..()
@@ -6352,6 +6381,7 @@ obj/item/weapon/reagent_containers/food/snacks/butterfingers_l
 	icon = 'icons/obj/food2.dmi'
 	icon_state = "pbj"
 	trash = /obj/item/trash/plate
+	food_flags = FOOD_SWEET
 
 /obj/item/weapon/reagent_containers/food/snacks/pbj/New()
 	..()
@@ -6389,6 +6419,7 @@ obj/item/weapon/reagent_containers/food/snacks/butterfingers_l
 	desc = "A fine treat and an exquisite cuisine."
 	inhand_states = list("left_hand" = 'icons/mob/in-hand/left/food.dmi', "right_hand" = 'icons/mob/in-hand/right/food.dmi')
 	bitesize = 1
+	food_flags = FOOD_MEAT
 
 /obj/item/weapon/reagent_containers/food/snacks/escargot/New()
 	. = ..()
@@ -6401,6 +6432,7 @@ obj/item/weapon/reagent_containers/food/snacks/butterfingers_l
 	name = "es-cargo"
 	desc = "Je-ne-veux-pas-travailler !"
 	bitesize = 1
+	food_flags = FOOD_MEAT
 	inhand_states = list("left_hand" = 'icons/mob/in-hand/left/food.dmi', "right_hand" = 'icons/mob/in-hand/right/food.dmi')
 	var/open = FALSE
 
